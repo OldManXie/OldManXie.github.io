@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>网站网址后有其它网址参数</title>
+    <url>/posts/b6e8.html</url>
+    <content><![CDATA[<h2 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h2><p>今天用cnzz统计查看流量时发现有一个不可描述的网址作为参数跟在我的网址后面，我手机，pc都输入了一下，并没发现跳转，随后大概百度了一下，是一种刷广告的存在，忽略即可，我可容不得你这种不可描述的网址出现在我的网站，不论什么方式。</p>
+<p>大概就是下面这个情况，不可描述的网址我已经码掉了，还各位希望戒撸。</p>
+<p><img src="/uploads/%E7%BD%91%E7%AB%99%E7%BD%91%E5%9D%80%E5%90%8E%E6%9C%89%E5%85%B6%E5%AE%83%E7%BD%91%E5%9D%80%E5%8F%82%E6%95%B0-1.png" alt="image-20200716155442334"></p>
+<p>造成这种情况的原因是因为跟站点URL规划，明明是404的页面，返回码却是200，所以我就在我项目中的公共引用文件中判断了一下当前参数是否包含https://和http://，如果包含就终止访问。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$parameter =  $_SERVER[<span class="string">"QUERY_STRING"</span>];</span><br><span class="line">        <span class="keyword">if</span> (strstr($parameter, <span class="string">'https://'</span>)||strstr($parameter, <span class="string">'http://'</span>))&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'&lt;div style="width:100%;"&gt;&lt;img width="100%" 		src="http://'</span>.C(<span class="string">'SITE_DOMAIN'</span>).<span class="string">'/Public/images/home/_1_.jpg" /&gt;&lt;/div&gt;'</span>;</span><br><span class="line">            <span class="keyword">exit</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>大概效果如下，黄网拜拜。</p>
+<p><img src="/uploads/%E7%BD%91%E7%AB%99%E7%BD%91%E5%9D%80%E5%90%8E%E6%9C%89%E5%85%B6%E5%AE%83%E7%BD%91%E5%9D%80%E5%8F%82%E6%95%B0-2.png" alt="image-20200716160127272"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>UnblockNeteaseMusic(三):伸手党使用教程</title>
     <url>/posts/19b4.html</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>此篇作为伸手党使用教程，即嫌麻烦不想搭建的人（虽然搭建也不麻烦）。<br><a href="/posts/6613.html">UnblockNeteaseMusic(一):Windows搭建教程</a> ，<a href="/posts/21ea.html">UnblockNeteaseMusic(二):Linux搭建教程</a></p>
