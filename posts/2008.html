@@ -85,13 +85,13 @@
 <meta property="og:url" content="https://www.sbblog.top/posts/2008.html">
 <meta property="og:site_name" content="SbBlog">
 <meta property="og:description" content="简介：参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;7deb64f902db 抽象工厂模式，即Abstract Factory Pattern，提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类；具体的工厂负责实现具体的产品实例。 抽象工厂模式与工厂方法模式最大的区别：抽象工厂中每个工厂可以创建多种类的产品；而工厂方法每个工厂只能创建一类。 适用场景：当需要创建的对象是">
-<meta property="og:image" content="https://www.sbblog.top/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1">
+<meta property="og:image" content="https://www.sbblog.top/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1.webp">
 <meta property="article:published_time" content="2020-04-27T03:32:59.000Z">
-<meta property="article:modified_time" content="2020-06-24T03:40:23.986Z">
+<meta property="article:modified_time" content="2020-07-29T09:43:20.258Z">
 <meta property="article:author" content="一个姓谢的糟老头子">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.sbblog.top/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1">
+<meta name="twitter:image" content="https://www.sbblog.top/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1.webp">
 
 
 
@@ -344,8 +344,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-06-24T11:40:23+08:00">
-                2020-06-24
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-29T17:43:20+08:00">
+                2020-07-29
               </time>
             
           </span>
@@ -439,7 +439,7 @@
 <p>系统中提供了产品的类库，且所有产品的接口相同，客户端不依赖产品实例的创建细节和内部结构。</p>
 <h2 id="优缺点："><a href="#优缺点：" class="headerlink" title="优缺点："></a>优缺点：</h2><p>优点：<br>降低耦合：抽象工厂模式将具体产品的创建延迟到具体工厂的子类中，这样将对象的创建封装起来，可以减少客户端与具体产品类之间的依赖，从而使系统耦合度低，这样更有利于后期的维护和扩展；<br>更符合开-闭原则：新增一种产品类时，只需要增加相应的具体产品类和相应的工厂子类即可<br>符合单一职责原则：每个具体工厂类只负责创建对应的产品<br>不使用静态工厂方法，可以形成基于继承的等级结构。</p>
 <p>缺点：<br>抽象工厂模式很难支持新种类产品的变化。<br>这是因为抽象工厂接口中已经确定了可以被创建的产品集合，如果需要添加新产品，此时就必须去修改抽象工厂的接口，这样就涉及到抽象工厂类的以及所有子类的改变，这样也就违背了“开发——封闭”原则。</p>
-<h2 id="类图："><a href="#类图：" class="headerlink" title="类图："></a>类图：</h2><p><img src="/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1" alt="img"></p>
+<h2 id="类图："><a href="#类图：" class="headerlink" title="类图："></a>类图：</h2><p><img src="/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1.webp" alt="img"></p>
 <h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><p><strong>步骤1：</strong> 创建<strong>抽象工厂类</strong>，定义具体工厂的公共接口</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span></span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">abstract</span> Product ManufactureContainer();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> Product ManufactureMould();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -601,7 +601,7 @@
                 
                   <div class="site-state-item site-state-posts">
                       <a href="/archives">
-                      <span class="site-state-item-count">24</span>
+                      <span class="site-state-item-count">25</span>
                       <span class="site-state-item-name">日志</span>
                     </a>
                   </div>
@@ -698,7 +698,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.4k</span>
+    <span title="Site words total count">29.2k</span>
   
 </div>
 

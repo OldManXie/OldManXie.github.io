@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="unblockneteasemusic,windows," />
+  <meta name="keywords" content="php,设计模式," />
 
 
 
@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="前言：首先感谢大佬制作维护此项目，通过此项目可实现无限制收听网易云音乐（VIP，无版权都可听），建议观看原文，此片文章只作为博主简单记录。原文地址：https:&#x2F;&#x2F;blog.csdn.net&#x2F;Davie_Liu&#x2F;article&#x2F;details&#x2F;90340317项目地址：https:&#x2F;&#x2F;github.com&#x2F;nondanee&#x2F;UnblockNeteaseMusic 简介：使用 QQ &#x2F; 虾米 &#x2F; 百">
+<meta name="description" content="前言：截取于原文地址：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;a32634a5170c 基于Token的验证原理：基于token的身份验证是无状态的，我们不再将用户的信息存储于服务器中。这种概念解决了在服务器存储信息时的许多问题。NOSESSION意味着你的程序可以根据需要去增减机器，而不用去担心用户是否登录。 基于Token的身份验证的过程如下： 用户通过用户名和密码发送登录请求。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UnblockNeteaseMusic(一):Windows搭建教程">
-<meta property="og:url" content="https://www.sbblog.top/posts/6613.html">
+<meta property="og:title" content="Token验证">
+<meta property="og:url" content="https://www.sbblog.top/posts/89ac.html">
 <meta property="og:site_name" content="SbBlog">
-<meta property="og:description" content="前言：首先感谢大佬制作维护此项目，通过此项目可实现无限制收听网易云音乐（VIP，无版权都可听），建议观看原文，此片文章只作为博主简单记录。原文地址：https:&#x2F;&#x2F;blog.csdn.net&#x2F;Davie_Liu&#x2F;article&#x2F;details&#x2F;90340317项目地址：https:&#x2F;&#x2F;github.com&#x2F;nondanee&#x2F;UnblockNeteaseMusic 简介：使用 QQ &#x2F; 虾米 &#x2F; 百">
-<meta property="article:published_time" content="2020-06-24T08:10:53.000Z">
-<meta property="article:modified_time" content="2020-06-24T09:28:04.335Z">
+<meta property="og:description" content="前言：截取于原文地址：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;a32634a5170c 基于Token的验证原理：基于token的身份验证是无状态的，我们不再将用户的信息存储于服务器中。这种概念解决了在服务器存储信息时的许多问题。NOSESSION意味着你的程序可以根据需要去增减机器，而不用去担心用户是否登录。 基于Token的身份验证的过程如下： 用户通过用户名和密码发送登录请求。">
+<meta property="og:image" content="https://www.sbblog.top/uploads/Token%E9%AA%8C%E8%AF%81-1.webp">
+<meta property="og:image" content="https://www.sbblog.top/uploads/Token%E9%AA%8C%E8%AF%81-2.webp">
+<meta property="og:image" content="https://www.sbblog.top/uploads/Token%E9%AA%8C%E8%AF%81-3.webp">
+<meta property="og:image" content="https://www.sbblog.top/uploads/Token%E9%AA%8C%E8%AF%81-4.webp">
+<meta property="article:published_time" content="2020-07-29T09:30:22.000Z">
+<meta property="article:modified_time" content="2020-07-30T01:36:12.370Z">
 <meta property="article:author" content="一个姓谢的糟老头子">
-<meta property="article:tag" content="unblockneteasemusic">
-<meta property="article:tag" content="windows">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.sbblog.top/uploads/Token%E9%AA%8C%E8%AF%81-1.webp">
 
 
 
@@ -120,12 +125,12 @@
 
 
 
-  <link rel="canonical" href="https://www.sbblog.top/posts/6613.html"/>
+  <link rel="canonical" href="https://www.sbblog.top/posts/89ac.html"/>
 
 
 
 
-  <title>UnblockNeteaseMusic(一):Windows搭建教程 | SbBlog</title>
+  <title>Token验证 | SbBlog</title>
   
 
 
@@ -297,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.sbblog.top/posts/6613.html">
+    <link itemprop="mainEntityOfPage" href="https://www.sbblog.top/posts/89ac.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一个姓谢的糟老头子">
@@ -314,7 +319,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">UnblockNeteaseMusic(一):Windows搭建教程</h2>
+          <h2 class="post-title" itemprop="name headline">Token验证</h2>
         
 
         <div class="post-meta">
@@ -327,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-24T16:10:53+08:00">
-                2020-06-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-29T17:30:22+08:00">
+                2020-07-29
               </time>
             
 
@@ -343,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-06-24T17:28:04+08:00">
-                2020-06-24
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-30T09:36:12+08:00">
+                2020-07-30
               </time>
             
           </span>
@@ -362,8 +367,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
                   </a>
                 </span>
 
@@ -393,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  754
+                  827
                 </span>
               
 
@@ -409,7 +414,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -430,18 +435,55 @@
       
 
       
-        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>首先感谢大佬制作维护此项目，通过此项目可实现无限制收听网易云音乐（VIP，无版权都可听），建议观看原文，此片文章只作为博主简单记录。<br>原文地址：<a href="https://blog.csdn.net/Davie_Liu/article/details/90340317" target="_blank" rel="noopener">https://blog.csdn.net/Davie_Liu/article/details/90340317</a><br>项目地址：<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">https://github.com/nondanee/UnblockNeteaseMusic</a></p>
-<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>使用 QQ / 虾米 / 百度 / 酷狗 / 酷我 / 咪咕 / JOOX 音源替换变灰歌曲链接 (默认仅启用一、五、六)。<br>为请求增加 <code>X-Real-IP</code> 参数解锁海外限制，支持指定网易云服务器 IP，支持设置上游 HTTP / HTTPS 代理。<br>完整的流量代理功能 (HTTP / HTTPS)，可直接作为系统代理 (同时支持 PAC)。</p>
-<h2 id="准备："><a href="#准备：" class="headerlink" title="准备："></a>准备：</h2><p>电脑已安装git的可直接执行下面命令。</p>
-<figure class="highlight plain"><figcaption><span>clone</span><a href="https://github.com/nondanee/UnblockNeteaseMusic.git```" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">未安装git可到**[UnblockNeteaseMusic](https:&#x2F;&#x2F;github.com&#x2F;nondanee&#x2F;UnblockNeteaseMusic)**直接下载zip文件。</span><br><span class="line"></span><br><span class="line">安装Nodejs。</span><br><span class="line">Windows+R快捷键，输入cmd，回车打开DOS命令行窗口，输入“node -h”命令，出现如下情况，即表示已安装！</span><br><span class="line"></span><br><span class="line">![image-20200624162752945](\uploads\UnblockNeteaseMusicWindows搭建教程-1.png)</span><br><span class="line"></span><br><span class="line">如未安装请参考，[Hexo使用记录(一):建站](&#x2F;posts&#x2F;15c8b954.html) 中nodejs安装，安装完成后再次执行“node -h”命令检查安装状态。</span><br><span class="line"></span><br><span class="line">## 配置：</span><br><span class="line"></span><br><span class="line">![image-20200624164310846](\uploads\UnblockNeteaseMusicWindows搭建教程-2.png)</span><br><span class="line"></span><br><span class="line">Windows+R快捷键，输入cmd，切换到你下载的项目文件目录，我这里的地址是&quot;E:\www\UnblockNeteaseMusic&quot;。</span><br></pre></td></tr></table></figure>
-<p>C:\Users\谢云虎&gt;E:<br>E:&gt;cd E:\www\UnblockNeteaseMusic</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">我们可以直接命令行“node app.js”，这样系统会自动默认开一个8080端口，但是由于8080端口我还有用，所以我可以加一个参数“-p port”，意思是，你可以指定任何端口，由于你在本机运行程序，需要指定网易云服务器 IP -f xxx.xxx.xxx.xxx，我们通过ping music.163.com 来获取ip地址；</span><br></pre></td></tr></table></figure>
-<p>ping music.163.com</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在获取到ip地址后输入&#96;&#96;&#96;node app.js -p 4567 -f 59.111.181.38&#96;&#96;&#96;回车，此时本地主机已经开启4567端口，并通过该端口代理；</span><br></pre></td></tr></table></figure>
-<p>node app.js -p 4567 -f 59.111.181.38</p>
-<p>```</p>
-<h2 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h2><p>以win10为例，步骤依次为：打开“网络和internet”设置=》代理=》手动设置代理，地址栏中填写’127.0.0.1‘，端口栏中填写你配置的端口，我这里是’4567‘。配置好电脑设置后，打开网易云音乐客户端=》设置=》工具=》自定义代理，选择http代理，服务器栏中填写’127.0.0.1‘，端口栏中填写你配置的端口，我这里是’4567‘，点击确定重启网易云客户端后生效。</p>
-<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>因为每次开机都要运行cmd执行代理命令，所以可以新建一个bat文件，然后放在开机启动目录下，可实现开机即启动代理，bat内容如下：<code>start cmd /k &quot;cd /d E:\www\UnblockNeteaseMusic &amp;&amp; node app.js -p 4567 -f 59.111.181.38 &quot;</code>，注意ip要换成自己ping出来的网易云ip。</p>
+        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>截取于原文地址：<a href="https://www.jianshu.com/p/a32634a5170c" target="_blank" rel="noopener">https://www.jianshu.com/p/a32634a5170c</a></p>
+<h2 id="基于Token的验证原理："><a href="#基于Token的验证原理：" class="headerlink" title="基于Token的验证原理："></a>基于Token的验证原理：</h2><p>基于token的身份验证是无状态的，我们不再将用户的信息存储于服务器中。这种概念解决了在服务器存储信息时的许多问题。NOSESSION意味着你的程序可以根据需要去增减机器，而不用去担心用户是否登录。</p>
+<h2 id="基于Token的身份验证的过程如下："><a href="#基于Token的身份验证的过程如下：" class="headerlink" title="基于Token的身份验证的过程如下："></a>基于Token的身份验证的过程如下：</h2><ul>
+<li>用户通过用户名和密码发送登录请求。</li>
+<li>服务器端验证用户名和密码。</li>
+<li>服务器端返回一个带签名的token给客户端并存储该token在服务端（redis）。</li>
+<li>客户端存储token，并且每次请求api时都要携带token。</li>
+<li>服务器验证token。</li>
+</ul>
+<p><img src="/uploads/Token%E9%AA%8C%E8%AF%81-1.webp" alt="img"></p>
+<h2 id="Token的优势："><a href="#Token的优势：" class="headerlink" title="Token的优势："></a>Token的优势：</h2><ul>
+<li>无状态，可扩展</li>
+</ul>
+<p>在客户端存储的token是无状态的，并且能够被扩展。基于这种无状态和不存储session信息，负载均衡的服务器就能够将用户的信息从一个服务器上传到其他服务器上。</p>
+<ul>
+<li>安全性</li>
+</ul>
+<p>请求中发送token而不是发送cookie能够防止csrf（跨站请求伪造）。即使在客户端使用cookie存储token，cookie也仅仅是一个存储机制而不是用于认证。补将信息存储在session中，让我们少了对session的操作。</p>
+<ul>
+<li>可扩展性</li>
+</ul>
+<p>token能够创建与其他程序共享权限的程序，也就是说多个站可以共用一个token。</p>
+<ul>
+<li><p>多平台跨域</p>
+<p>Cookie是不允许垮域访问的，token支持。</p>
+</li>
+</ul>
+<h2 id="Token的缺陷："><a href="#Token的缺陷：" class="headerlink" title="Token的缺陷："></a>Token的缺陷：</h2><ul>
+<li>占用带宽</li>
+</ul>
+<p>正常情况下要比 session_id 更大，需要消耗更多流量，挤占更多带宽，假如你的网站每月有 10 万次的浏览器，就意味着要多开销几十兆的流量。听起来并不多，但日积月累也是不小一笔开销。实际上，许多人会在 JWT 中存储的信息会更多。</p>
+<ul>
+<li>无法在服务端注销，那么就很难解决劫持问题。</li>
+<li>性能问题</li>
+</ul>
+<p>JWT 的卖点之一就是加密签名，由于这个特性，接收方得以验证 JWT 是否有效且被信任。但是大多数 Web 身份认证应用中，JWT 都会被存储到 Cookie 中，这就是说你有了两个层面的签名。听着似乎很牛逼，但是没有任何优势，为此，你需要花费两倍的 CPU 开销来验证签名。对于有着严格性能要求的 Web 应用，这并不理想，尤其对于单线程环境。</p>
+<h2 id="Refresh-Token："><a href="#Refresh-Token：" class="headerlink" title="Refresh Token："></a>Refresh Token：</h2><p>Refresh Token它可以避免频繁的读写操作。这种方案中，服务端不需要刷新 Token的过期时间，一旦 Token过期，就反馈给前端，前端使用 Refresh Token 申请一个全新Token继续使用。这种方案中，服务端只需要在客户端请求更新 Token的时候对 Refresh Token 的有效性进行一次检查，大大减少了更新有效期的操作，也就避免了频繁读写。当然 Refresh Token 也是有有效期的，但是这个有效期就可以长一点了，比如，以天为单位的时间。</p>
+<p>使用 Token和 Refresh Token 的时序图如下：</p>
+<ul>
+<li><p>登录</p>
+<p>  <img src="/uploads/Token%E9%AA%8C%E8%AF%81-2.webp" alt="img"></p>
+</li>
+<li><p>业务请求</p>
+<p>   <img src="/uploads/Token%E9%AA%8C%E8%AF%81-3.webp" alt="img"></p>
+</li>
+<li><p>Token过期</p>
+<p>   <img src="/uploads/Token%E9%AA%8C%E8%AF%81-4.webp" alt="img"></p>
+</li>
+</ul>
 
         <script src="/js/needsharebutton.min.js"></script>
         <!-- needsharebutton CSS file -->
@@ -465,9 +507,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/unblockneteasemusic/" rel="tag"># unblockneteasemusic</a>
+            <a href="/tags/php/" rel="tag"># php</a>
           
-            <a href="/tags/windows/" rel="tag"># windows</a>
+            <a href="/tags/design-pattern/" rel="tag"># 设计模式</a>
           
         </div>
       
@@ -480,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/b979.html" rel="next" title="程序设计模式(四):单例模式">
-                <i class="fa fa-chevron-left"></i> 程序设计模式(四):单例模式
+              <a href="/posts/b6e8.html" rel="next" title="网站网址后有其它网址参数">
+                <i class="fa fa-chevron-left"></i> 网站网址后有其它网址参数
               </a>
             
           </div>
@@ -489,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/21ea.html" rel="prev" title="UnblockNeteaseMusic(二):Linux搭建教程">
-                UnblockNeteaseMusic(二):Linux搭建教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -648,7 +686,7 @@
                 
 
                 
-                  <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介："><span class="nav-number">2.</span> <span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备："><span class="nav-number">3.</span> <span class="nav-text">准备：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用："><span class="nav-number">4.</span> <span class="nav-text">使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充："><span class="nav-number">5.</span> <span class="nav-text">补充：</span></a></li></ol></div>
+                  <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Token的验证原理："><span class="nav-number">2.</span> <span class="nav-text">基于Token的验证原理：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Token的身份验证的过程如下："><span class="nav-number">3.</span> <span class="nav-text">基于Token的身份验证的过程如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token的优势："><span class="nav-number">4.</span> <span class="nav-text">Token的优势：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token的缺陷："><span class="nav-number">5.</span> <span class="nav-text">Token的缺陷：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refresh-Token："><span class="nav-number">6.</span> <span class="nav-text">Refresh Token：</span></a></li></ol></div>
                 
 
               </div>

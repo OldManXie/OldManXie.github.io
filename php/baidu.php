@@ -16,6 +16,7 @@ $urls = array(
     'https://www.sbblog.top/posts/fc3f.html',
     'https://www.sbblog.top/posts/9ad4.html',
     'https://www.sbblog.top/posts/979a.html',
+    'https://www.sbblog.top/posts/b6e8.html',
 );
 $api = 'http://data.zz.baidu.com/urls?site=www.sbblog.top&token=iCHDA5PWGVSxWhIH';
 $ch = curl_init();

@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Token验证</title>
+    <url>/posts/89ac.html</url>
+    <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>截取于原文地址：<a href="https://www.jianshu.com/p/a32634a5170c" target="_blank" rel="noopener">https://www.jianshu.com/p/a32634a5170c</a></p>
+<h2 id="基于Token的验证原理："><a href="#基于Token的验证原理：" class="headerlink" title="基于Token的验证原理："></a>基于Token的验证原理：</h2><p>基于token的身份验证是无状态的，我们不再将用户的信息存储于服务器中。这种概念解决了在服务器存储信息时的许多问题。NOSESSION意味着你的程序可以根据需要去增减机器，而不用去担心用户是否登录。</p>
+<h2 id="基于Token的身份验证的过程如下："><a href="#基于Token的身份验证的过程如下：" class="headerlink" title="基于Token的身份验证的过程如下："></a>基于Token的身份验证的过程如下：</h2><ul>
+<li>用户通过用户名和密码发送登录请求。</li>
+<li>服务器端验证用户名和密码。</li>
+<li>服务器端返回一个带签名的token给客户端并存储该token在服务端（redis）。</li>
+<li>客户端存储token，并且每次请求api时都要携带token。</li>
+<li>服务器验证token。</li>
+</ul>
+<p><img src="/uploads/Token%E9%AA%8C%E8%AF%81-1.webp" alt="img"></p>
+<h2 id="Token的优势："><a href="#Token的优势：" class="headerlink" title="Token的优势："></a>Token的优势：</h2><ul>
+<li>无状态，可扩展</li>
+</ul>
+<p>在客户端存储的token是无状态的，并且能够被扩展。基于这种无状态和不存储session信息，负载均衡的服务器就能够将用户的信息从一个服务器上传到其他服务器上。</p>
+<ul>
+<li>安全性</li>
+</ul>
+<p>请求中发送token而不是发送cookie能够防止csrf（跨站请求伪造）。即使在客户端使用cookie存储token，cookie也仅仅是一个存储机制而不是用于认证。补将信息存储在session中，让我们少了对session的操作。</p>
+<ul>
+<li>可扩展性</li>
+</ul>
+<p>token能够创建与其他程序共享权限的程序，也就是说多个站可以共用一个token。</p>
+<ul>
+<li><p>多平台跨域</p>
+<p>Cookie是不允许垮域访问的，token支持。</p>
+</li>
+</ul>
+<h2 id="Token的缺陷："><a href="#Token的缺陷：" class="headerlink" title="Token的缺陷："></a>Token的缺陷：</h2><ul>
+<li>占用带宽</li>
+</ul>
+<p>正常情况下要比 session_id 更大，需要消耗更多流量，挤占更多带宽，假如你的网站每月有 10 万次的浏览器，就意味着要多开销几十兆的流量。听起来并不多，但日积月累也是不小一笔开销。实际上，许多人会在 JWT 中存储的信息会更多。</p>
+<ul>
+<li>无法在服务端注销，那么就很难解决劫持问题。</li>
+<li>性能问题</li>
+</ul>
+<p>JWT 的卖点之一就是加密签名，由于这个特性，接收方得以验证 JWT 是否有效且被信任。但是大多数 Web 身份认证应用中，JWT 都会被存储到 Cookie 中，这就是说你有了两个层面的签名。听着似乎很牛逼，但是没有任何优势，为此，你需要花费两倍的 CPU 开销来验证签名。对于有着严格性能要求的 Web 应用，这并不理想，尤其对于单线程环境。</p>
+<h2 id="Refresh-Token："><a href="#Refresh-Token：" class="headerlink" title="Refresh Token："></a>Refresh Token：</h2><p>Refresh Token它可以避免频繁的读写操作。这种方案中，服务端不需要刷新 Token的过期时间，一旦 Token过期，就反馈给前端，前端使用 Refresh Token 申请一个全新Token继续使用。这种方案中，服务端只需要在客户端请求更新 Token的时候对 Refresh Token 的有效性进行一次检查，大大减少了更新有效期的操作，也就避免了频繁读写。当然 Refresh Token 也是有有效期的，但是这个有效期就可以长一点了，比如，以天为单位的时间。</p>
+<p>使用 Token和 Refresh Token 的时序图如下：</p>
+<ul>
+<li><p>登录</p>
+<p>  <img src="/uploads/Token%E9%AA%8C%E8%AF%81-2.webp" alt="img"></p>
+</li>
+<li><p>业务请求</p>
+<p>   <img src="/uploads/Token%E9%AA%8C%E8%AF%81-3.webp" alt="img"></p>
+</li>
+<li><p>Token过期</p>
+<p>   <img src="/uploads/Token%E9%AA%8C%E8%AF%81-4.webp" alt="img"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站网址后有其它网址参数</title>
     <url>/posts/b6e8.html</url>
     <content><![CDATA[<h2 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h2><p>今天用cnzz统计查看流量时发现有一个不可描述的网址作为参数跟在我的网址后面，我手机，pc都输入了一下，并没发现跳转，随后大概百度了一下，是一种刷广告的存在，忽略即可，我可容不得你这种不可描述的网址出现在我的网站，不论什么方式。</p>
@@ -148,7 +209,7 @@
 <p>系统中提供了产品的类库，且所有产品的接口相同，客户端不依赖产品实例的创建细节和内部结构。</p>
 <h2 id="优缺点："><a href="#优缺点：" class="headerlink" title="优缺点："></a>优缺点：</h2><p>优点：<br>降低耦合：抽象工厂模式将具体产品的创建延迟到具体工厂的子类中，这样将对象的创建封装起来，可以减少客户端与具体产品类之间的依赖，从而使系统耦合度低，这样更有利于后期的维护和扩展；<br>更符合开-闭原则：新增一种产品类时，只需要增加相应的具体产品类和相应的工厂子类即可<br>符合单一职责原则：每个具体工厂类只负责创建对应的产品<br>不使用静态工厂方法，可以形成基于继承的等级结构。</p>
 <p>缺点：<br>抽象工厂模式很难支持新种类产品的变化。<br>这是因为抽象工厂接口中已经确定了可以被创建的产品集合，如果需要添加新产品，此时就必须去修改抽象工厂的接口，这样就涉及到抽象工厂类的以及所有子类的改变，这样也就违背了“开发——封闭”原则。</p>
-<h2 id="类图："><a href="#类图：" class="headerlink" title="类图："></a>类图：</h2><p><img src="/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1" alt="img"></p>
+<h2 id="类图："><a href="#类图：" class="headerlink" title="类图："></a>类图：</h2><p><img src="/uploads/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-1.webp" alt="img"></p>
 <h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><p><strong>步骤1：</strong> 创建<strong>抽象工厂类</strong>，定义具体工厂的公共接口</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span></span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">abstract</span> Product ManufactureContainer();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> Product ManufactureMould();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
