@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Xftp5|6要继续使用此程序，您必须应用最新的更新或使用新版本</title>
+    <url>/posts/8b48.html</url>
+    <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>打开xftp6报让更新到最新版本，点击确认后却提示已是最新版本，下载c32asm软件，链接：<a href="https://pan.baidu.com/s/17iW4Ao9qEW6y3qM1EqOKDw" target="_blank" rel="noopener">https://pan.baidu.com/s/17iW4Ao9qEW6y3qM1EqOKDw</a> ，提取码：1uoi</p>
+<h2 id="错误："><a href="#错误：" class="headerlink" title="错误："></a>错误：</h2><p><img src="/uploads/Xftp-1.png" alt="img"></p>
+<h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><p><strong>一、</strong>  <strong>最简单的临时解决方案：修改本地系统时间</strong></p>
+<p>把系统时间改到2018年12月25日之前，就可以打开了。</p>
+<p>但是这只能解燃眉之急，治标不治本，总不能每次要打开Xshell都修改一下本地时间，打开软件后再手动修改回来吧。</p>
+<p>二、 <strong>推荐解决方案：修改安装目录下的nslicense.dll</strong></p>
+<ul>
+<li>找到xftp的安装目录的 <code>nslicense.dll</code>文件复制出来 </li>
+<li>下载c32asm </li>
+<li>用c32asm以16进制形式打开nslicense </li>
+<li>xftp5搜索16进制： 7F0C81F98033E1010F8680 </li>
+<li>替换成     ： 7F0C81F98033E1010F8380 </li>
+<li>xftp6搜索16进制： 7F0C81F98033E1010F8681 </li>
+<li>替换成     ： 7F0C81F98033E1010F8381</li>
+<li>也就是将最后两位86替换成83 然后保存，并替换文件 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>错误</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Token验证</title>
     <url>/posts/89ac.html</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>截取于原文地址：<a href="https://www.jianshu.com/p/a32634a5170c" target="_blank" rel="noopener">https://www.jianshu.com/p/a32634a5170c</a></p>
